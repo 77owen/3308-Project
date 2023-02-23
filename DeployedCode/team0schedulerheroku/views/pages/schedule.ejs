@@ -1,0 +1,78 @@
+<%- include('../partials/header') %>
+    <style>
+        @import url(https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i,600,600i);
+        </style>
+            
+                <main class="page">
+                <div class="offcanvas-header position-fixed" style="z-index: 1;background: #40464b;width: 383px;padding-right: 10px;padding-left: 10px;">
+                    <input type="text" id="searchBox" class="form-control" placeholder="Search...">
+                    <button class="btn btn-primary" type="button" onclick="doSearch()" style="margin-left: 10px;">
+                        <span class="spinner-border spinner-border-sm" style="display: none;" id="searchSpinner" role="status" aria-hidden="true"></span>
+                        <span id="searchButtonText" style="display: block;">Search</span>
+                    </button>
+                </div>
+                <div class="container-sm float-start" id="lcontainer" style="width: 400px;padding: 10px;height: 100vh;background: #6D777E;margin-top: 0px;padding-top: 30px;overflow-y: scroll;padding-left: 10px;">
+                    <ul id="classList" class="list-unstyled" style="margin-top: 50px;position: relative;"></ul>
+                </div>
+                <div id='calendar'></div>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="searchResults" style="border-right-width: 2px;">
+                    <div class="offcanvas-header" style="background: #40464B;">
+                        <h5 class="offcanvas-title" style="color: #ffffff;font-size: 25px;">Search Results</h5><button type="button" class="btn-close text-reset btn-secondary" data-bs-dismiss="offcanvas" aria-label="Close" id="searchResultsClose"></button>
+                    </div>
+                    <div class="offcanvas-body" style="background: #6D777E;">
+                        <ul class="list-unstyled" id="searchList">
+                            <li>
+                                <div class="card" style="margin-bottom: 10px;">
+                                    <div class="card-body" style="margin-top: 0px;">
+                                        <h4 class="card-title">CSCI 1000</h4>
+                                        <h6 class="text-muted card-subtitle mb-2">Computer Science as a Field of Work and Study</h6><button class="btn btn-primary float-end" type="button" style="padding-left: 10px;padding-right: 10px;padding-bottom: 4px;padding-top: 4px;" onclick="addClass($(this))">Add</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card" style="margin-bottom: 10px;">
+                                    <div class="card-body" style="margin-top: 0px;">
+                                        <h4 class="card-title">CSCI 2000</h4>
+                                        <h6 class="text-muted card-subtitle mb-2">Example name for CSCI 2000</h6><button class="btn btn-primary float-end" type="button" style="padding-left: 10px;padding-right: 10px;padding-bottom: 4px;padding-top: 4px;" onclick="addClass($(this))">Add</button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="card" style="margin-bottom: 10px;">
+                                    <div class="card-body" style="margin-top: 0px;">
+                                        <h4 class="card-title">CSCI 3000</h4>
+                                        <h6 class="text-muted card-subtitle mb-2">Example name for CSCI 3000</h6><button class="btn btn-primary float-end" type="button" style="padding-left: 10px;padding-right: 10px;padding-bottom: 4px;padding-top: 4px;" onclick="addClass($(this))">Add</button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal fade" role="dialog" tabindex="-1" id="classInfo">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title text-nowrap" id="cId">CSCI 1000</h4>
+                                <p class="text-truncate modal-title" id="cName" style="margin-left: 5px;margin-top: 2px;">Computer Science as a Field of Work and Study and then there are some other trhings</p><button type="button" class="btn-close btn-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <!-- <p id="description">The content of your modal.</p> -->
+                            </div>
+                            <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal fade" role="dialog" tabindex="-1" id="removePrompt">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Remove Class?</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body"><button class="btn btn-primary btn-danger" id="removePromptYes" type="button" style="margin-right: 10px;">Remove</button><button class="btn btn-primary btn-secondary" id="removePromptNo" type="button">Cancel</button><button class="btn btn-outline-danger float-end" id="removePromptClear" type="button">CLEAR ALL!</button></div>
+                        </div>
+                    </div>
+                </div>
+                </main>
+            </body>
+            
+            </html>

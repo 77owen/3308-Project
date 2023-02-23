@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#selector").change(function(){
+                $("body").toggleClass("bg-secondary text-white");
+                $("nav").toggleClass("navbar navbar-dark bg-darkn navbar-expand-lg fixed-top bg-dark clean-navbar");
+                $("nav").toggleClass("navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar");
+                $("button").toggleClass("btn-outline-dark");
+                $("button").toggleClass("btn-outline-light");
+                var text=document.querySelector('.text')
+                if(text.style.color=='white'){
+                    text.style.color='black';
+                }else{
+                    text.style.color='white';
+                }
+            });
+        });
+    </script>
+    <script src="assets/js/login.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/login.css">
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-light navbar-expand-lg fixed-top bg-white clean-navbar">
+        <div class="container"><a class="navbar-brand logo" href="home.html">CU Class Scheduler</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="schedule.html">Schedule</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">CART</a></li>
+                    <li class="nav-item"><a class="nav-link" href="login.html">LOGIN</a></li>
+                </ul>
+                <div class="custom-control custom-switch mr=5">
+                    <input type="checkbox" class="custom-control-input" id="selector">
+                    <label class="custom-control-label" for="selector">Dark Mode</label>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <main class="page">
+        <section class="clean-block clean-hero" style="color:rgb(0, 0, 0, 0);">
+            <div class="text" id="text" style="color:black;">
+                <%var text =  '<h2>Solve all your scheduling problems</h2> <p>CU Class Scheduler simplifies the challenges of finding the perfect schedule so you can fit in anything you want</p>' %>
+                <% if (username) %>
+                <% { %>
+                    <%text = '<h2>Welcome, ' + username + '!</h2>' %>
+                <% } %>
+                <%- text %>
+                      <!-- Button to click to show the modal-->
+
+                <a
+                href="#myModal2"
+                class="btn btn-outline-dark btn-lg"
+                data-toggle="modal"
+                onclick="openModal()"
+                >Login</a
+                >
+                <a
+                href="#myModal"
+                class="btn btn-outline-dark btn-lg"
+                data-toggle="modal"
+                onclick="openModal()"
+                >Create an Account</a
+                >
+                
+            </div>
+        </section>
+          <!-- Sign up Modal HTML -->
+          <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-login">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="avatar">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/800px-Colorado_Buffaloes_logo.svg.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  <h4 class="modal-title">Sign Up</h4>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    &times;
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Please fill out this form to create an account.
+                    </p>
+                  <form action="/home" method="post">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="firstName"
+                      placeholder="First Name"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="lastName"
+                      placeholder="Last Name"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="username"
+                      placeholder="Username"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="email"
+                      placeholder="Email"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      id="psw"
+                      type="password"
+                      class="form-control"
+                      name="password"
+                      placeholder="Password"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      id="cpsw"
+                      type="password"
+                      class="form-control"
+                      name="confirm password"
+                      placeholder="Confirm Password"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      id="my_submit_button"
+                      class="btn btn-primary btn-block login-btn"
+                      disabled
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                  <div id="message" class="rules" style="display: block">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">
+                      A <b>capital (uppercase)</b> letter
+                    </p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="symbol" class="invalid">A <b>symbol</b> "!@#$%^&*()".</p>
+                    <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                    <p id="match" class="invalid">
+                      Password and Confirm Password Match
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Login Modal HTML -->
+                    <div id="myModal2" class="modal fade">
+                        <div class="modal-dialog modal-login">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <div class="avatar">
+                                <img
+                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/800px-Colorado_Buffaloes_logo.svg.png"
+                                  alt="Avatar"
+                                />
+                              </div>
+                              <h4 class="modal-title">Login</h4>
+                              <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-hidden="true"
+                              >
+                                &times;
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>
+                                Please fill out this form to login to your account.
+                                </p>
+                              <form action="/home" method="get">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  name="usn"
+                                  placeholder="Username"
+                                  required="required"
+                                />
+                              </div>
+                              <div class="form-group">
+                                <input
+                                  id="psw"
+                                  type="password"
+                                  class="form-control"
+                                  name="psw"
+                                  placeholder="Password"
+                                  required="required"
+                                />
+                              </div>
+                              <div class="form-group">
+                                <button
+                                  type="submit"
+                                  id="my_submit_button"
+                                  class="btn btn-primary btn-block login-btn"
+                                  enabled
+                                >
+                                  Login
+                                </button>
+                              </div>
+                            </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+    </main>
+</body>
+
+</html>

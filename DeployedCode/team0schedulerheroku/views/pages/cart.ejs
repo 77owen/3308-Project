@@ -1,0 +1,72 @@
+<%- include('../partials/header') %>
+
+
+<body style="background: #c0c2c4;">
+    <main class="page">
+    <div class="offcanvas-header position-fixed" style="z-index: 1;background: #40464b;width: 383px;padding-right: 10px;padding-left: 10px;"><input type="text" id="searchBox" class="form-control" placeholder="Search..."></div>
+    <div class="container-sm float-start" style="width: 400px;padding: 10px;height: 100vh;background: #6D777E;margin-top: 0px;padding-top: 30px;overflow-y: scroll;padding-left: 10px;">
+        <ul id="classList" class="list-unstyled" style="margin-top: 50px;position: relative;"></ul>
+    </div>
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="searchResults" style="border-right-width: 2px;">
+        <div class="offcanvas-header" style="background: #40464B;">
+            <h5 class="offcanvas-title" style="color: #ffffff;font-size: 25px;">Search Results</h5><button type="button" class="btn-close text-reset btn-secondary" data-bs-dismiss="offcanvas" aria-label="Close" id="searchResultsClose"></button>
+        </div>
+        <div class="offcanvas-body" style="background: #c0c2c4;">
+            <ul class="list-unstyled">
+                <li>
+                    <div class="card" style="margin-bottom: 10px;">
+                        <div class="card-body" style="margin-top: 0px;">
+                            <h4 class="card-title">CSCI 3104</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Surveying fundamental algorithm design techniques, analyzing algorithm run time complexities, and identifying computational problems that are unlikely to have efficient algorithmic solutions.</h6><button class="btn btn-primary float-end" type="button" style="padding-left: 10px;padding-right: 10px;padding-bottom: 4px;padding-top: 4px;" onclick="addClass($(this))">Add</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card" style="margin-bottom: 10px;">
+                        <div class="card-body" style="margin-top: 0px;">
+                            <h4 class="card-title">CSCI 3287</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Explore fundamental concepts of database requirements analysis, database design, and database implementation with emphasis on the relational model.</h6><button class="btn btn-primary float-end" type="button" style="padding-left: 10px;padding-right: 10px;padding-bottom: 4px;padding-top: 4px;" onclick="addClass($(this))">Add</button>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card" style="margin-bottom: 10px;">
+                        <div class="card-body" style="margin-top: 0px;">
+                            <h4 class="card-title">CSCI 3308</h4>
+                            <h6 class="text-muted card-subtitle mb-2">Covers technology tools and methods for software development with a strong focus on best practices used in industry and professional development, such as agile methodologies, full-stack development, pair-programming, front-end user interface, back-end database, front-end-to-back-end integration, application security, using the cloud, using web services, and test-driven design.</h6><button class="btn btn-primary float-end" type="button" style="padding-left: 10px;padding-right: 10px;padding-bottom: 4px;padding-top: 4px;" onclick="addClass($(this))">Add</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="classInfo">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-nowrap" id="cId">CSCI 1000</h4>
+                    <p class="text-truncate modal-title" id="cName" style="margin-left: 5px;margin-top: 2px;">Computer Science as a Field of Work and Study and then there are some other trhings</p><button type="button" class="btn-close btn-secondary" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="description">The content of your modal.</p>
+                </div>
+                <div class="modal-footer"><button class="btn btn-secondary" type="button" data-bs-dismiss="modal">Close</button></div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="removePrompt">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Remove Class?</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body"><button class="btn btn-primary btn-danger" id="removePromptYes" type="button" style="margin-right: 10px;">Remove</button><button class="btn btn-primary btn-secondary" id="removePromptNo" type="button">Cancel</button><button class="btn btn-outline-danger float-end" id="removePromptClear" type="button">CLEAR ALL!</button></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/views/pages/assets/js/Scheduler.js"></script>
+    </main>
+</body>
+
+</html>

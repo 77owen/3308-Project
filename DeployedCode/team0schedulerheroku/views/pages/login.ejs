@@ -1,0 +1,209 @@
+<%- include('../partials/header') %>
+
+    <main class="page">
+      <section class="clean-block clean-hero d-flex justify-content-center" style="color:rgb(0, 0, 0, 0);padding: 10px;">
+        <% if(dark){%>
+          <div class="text" id="text"style="color:white;">
+            <% var text =  '<h2>Welcome, ' + username + '!</h2>' %>
+            <% var buttons = '<a href="#myModal2" class="btn btn-outline-light btn-lg" style="padding: 10px;" data-toggle="modal" onclick="openModal()">Change User</a><a href="/logout" class="btn btn-outline-light btn-lg" style="padding: 10px;">LOGOUT</a>' %>
+            <% if (username == '') { %>
+                <% text = '<h2>Login or Create an Account to Access the CU Scheduler!</h2> <p>CU Class Scheduler simplifies the challenges of finding the perfect schedule so you can fit in anything you want</p>' %> %>
+                <% buttons = '<a href="#myModal2" class="btn btn-outline-light btn-lg" style="padding: 10px;" data-toggle="modal" onclick="openModal()">Login</a><a href="#myModal" class="btn btn-outline-light btn-lg" style="padding: 10px;" data-toggle="modal" onclick="openModal()">Create an Account</a>' %>
+            <% } %>
+            <%- text %>
+            <%- buttons %>    
+        <%}else{%>
+          <div class="text" id="text"style="color:black;">
+            <% var text =  '<h2>Welcome, ' + username + '!</h2>' %>
+            <% var buttons = '<a href="#myModal2" class="btn btn-outline-dark btn-lg" style="padding: 10px;" data-toggle="modal" onclick="openModal()">Change User</a><a href="/logout" class="btn btn-outline-dark btn-lg" style="padding: 10px;">LOGOUT</a>' %>
+            <% if (username == '') { %>
+                <% text = '<h2>Login or Create an Account to Access the CU Scheduler!</h2> <p>CU Class Scheduler simplifies the challenges of finding the perfect schedule so you can fit in anything you want</p>' %> %>
+                <% buttons = '<a href="#myModal2" class="btn btn-outline-dark btn-lg" style="padding: 10px;" data-toggle="modal" onclick="openModal()">Login</a><a href="#myModal" class="btn btn-outline-dark btn-lg" style="padding: 10px;" data-toggle="modal" onclick="openModal()">Create an Account</a>' %>
+            <% } %>
+            <%- text %>
+            <%- buttons %>    
+        <%}%>       
+        </div>
+    </section>
+          <!-- Sign up Modal HTML !!-->
+          <div id="myModal" class="modal fade">
+            <div class="modal-dialog modal-login">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <div class="avatar">
+                    <img
+                      src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/800px-Colorado_Buffaloes_logo.svg.png"
+                      alt="Avatar"
+                    />
+                  </div>
+                  <h4 class="modal-title">Sign Up</h4>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-hidden="true"
+                  >
+                    &times;
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>
+                    Please fill out this form to create an account.
+                    </p>
+                  <form action="/createaccount" method="post">
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="firstName"
+                      placeholder="First Name"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="lastName"
+                      placeholder="Last Name"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="username"
+                      placeholder="Username"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="email"
+                      placeholder="Email"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      id="psw"
+                      type="password"
+                      class="form-control"
+                      name="password"
+                      placeholder="Password"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <input
+                      id="cpsw"
+                      type="password"
+                      class="form-control"
+                      name="confirm password"
+                      placeholder="Confirm Password"
+                      required="required"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <button
+                      type="submit"
+                      id="my_submit_button"
+                      class="btn btn-primary btn-block login-btn"
+                      disabled
+                    >
+                      Sign Up
+                    </button>
+                  </div>
+                </form>
+                </div>
+                <div class="modal-footer">
+                  <div id="message" class="rules" style="display: block">
+                    <h3>Password must contain the following:</h3>
+                    <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                    <p id="capital" class="invalid">
+                      A <b>capital (uppercase)</b> letter
+                    </p>
+                    <p id="number" class="invalid">A <b>number</b></p>
+                    <p id="symbol" class="invalid">A <b>symbol</b> "!@#$%^&*()".</p>
+                    <p id="length" class="invalid">Minimum <b>6 characters</b></p>
+                    <p id="match" class="invalid">
+                      Password and Confirm Password Match
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Login Modal HTML -->
+                    <div id="myModal2" class="modal fade">
+                        <div class="modal-dialog modal-login">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <div class="avatar">
+                                <img
+                                  src="https://upload.wikimedia.org/wikipedia/en/thumb/d/d3/Colorado_Buffaloes_logo.svg/800px-Colorado_Buffaloes_logo.svg.png"
+                                  alt="Avatar"
+                                />
+                              </div>
+                              <h4 class="modal-title">Login</h4>
+                              <button
+                                type="button"
+                                class="close"
+                                data-dismiss="modal"
+                                aria-hidden="true"
+                              >
+                                &times;
+                              </button>
+                            </div>
+                            <div class="modal-body">
+                              <p>
+                                Please fill out this form to login to your account.
+                                </p>
+                              <form action="/login" method="post">
+                              <div class="form-group">
+                                <input
+                                  type="text"
+                                  class="form-control"
+                                  name="usn"
+                                  placeholder="Username"
+                                  required="required"
+                                />
+                              </div>
+                              <div class="form-group">
+                                <input
+                                  id="psw"
+                                  type="password"
+                                  class="form-control"
+                                  name="psw"
+                                  placeholder="Password"
+                                  required="required"
+                                />
+                              </div>
+                              <div class="form-group">
+                                <button
+                                  type="submit"
+                                  id="my_submit_button"
+                                  class="btn btn-primary btn-block login-btn"
+                                  enabled
+                                >
+                                  Login
+                                </button>
+                              </div>
+                            </form>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+<div class="container-lg" style="margin-top: 2%">
+  <% if (message) { %>
+    <div class="alert alert-danger"><%- message %></div>
+    <% } %>
+</div>
+    </main>
+</body>
+
+</html>

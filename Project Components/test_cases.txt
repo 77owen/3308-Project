@@ -1,0 +1,15 @@
+Test Cases:
+○ Login/Register
+    ■ Only successfully login when correct user/password is submitted
+    ■ Register:
+        ● Username
+        ● Email
+        ● Password
+        ● Password confirmation
+        ● Only accept form when all parts have been filled out
+○ Cart
+    ■ Can search for classes
+    ■ Save classes to look at later ○ Navbar
+    ■ User can successfully navigate between pages
+    ■ Consistent between pages
+■ Dark mode button works

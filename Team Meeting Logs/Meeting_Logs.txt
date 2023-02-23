@@ -1,0 +1,58 @@
+
+2/3/2022
+15 min - Introductory meeting: proposed idea, introduced group members
+
+2/10/2022
+15 min - Spoke about Project Milestone 2, planning to use Kanban board on GitHub to organize.
+
+2/17/2022
+15 min - Spoke about potential features: Schedule Display, Login Page, Scheduling Algorithm, Display for Available Courses, Options for Preferred Times
+- Maybe divide each feature to each person
+- Milestone 2 due Friday
+- Make sure everyone knows how it works, front end, back end -> interview grading
+
+2/24/2022
+15 min - Spoke about Project Milestone 3. By next week:
+- Divide work between group members, figure out who does what
+- Start working on website: Login Page, Set up database
+
+3/3/2022
+15 min - Spoke about Project Milestone 3, specific features to implement for interview grading.
+- Database will be fairly simple, most information will be pulled from CU Boudler API
+- Don't worry about figuring out pulling the API just yet, we will learn that in Lab 8
+- Planning to meet over the weekend to check progress on Demo
+  FEATURES BREAKDOWN FOR DEMO:
+  Solomon - Set up database, table for login info, table for class cart
+  Owen - Set up basic search page for classes
+  Tristan - Set up basic login page for classes
+  Greyson - Set up basic light/dark mode toggle on navbar
+  Gabe - Set up basic home page
+
+3/10/2022
+15 min - Interview Grading for Project Milestone 3
+- Features look great, but try to maintain uniformity
+- Maintain CSS that each group member should follow
+- Start pushing things to GitHub
+- Start combining your work early -> will be harder to do later
+
+3/17/2022
+15 min - Spoke about Project Milestone 4
+- Maintain uniformity in CSS
+- Start commenting code
+- Make an exact plan - feature by feature - who does what
+
+3/31/2022
+15 min
+- Make sure everyone's commits are equal and visible
+- Comment what code you write
+- Try to write the NodeJS by next Thursday
+
+4/7/2022
+15 min
+- Make sure each person knows what
+- Get an exact plan of who does what ASAP
+- Get presentations ready
+- Make a plan for who will take about what during the presentation
+- Each person gets about 2 minutes to speak
+- Presentation is a significant portion of the grade
+- Have it on at least 2 laptops
